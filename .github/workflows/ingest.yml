@@ -1,0 +1,51 @@
+name: Ingest
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force re-ingestion (drop and recreate DB)'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Run ingestion
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then
+            npm run ingest:full
+          else
+            npm run ingest:full
+          fi
+
+      - name: Update coverage
+        run: npm run coverage:update
+
+      - name: Verify coverage
+        run: npm run coverage:verify
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: update ingested data"
+          git push

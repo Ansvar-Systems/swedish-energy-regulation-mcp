@@ -1,0 +1,93 @@
+# sources.yml -- Data provenance metadata
+# Reference: docs/mcp-infrastructure-blueprint.md
+
+schema_version: "1.0"
+mcp_name: "Swedish Energy Regulation MCP"
+category: "domain_intelligence"
+jurisdiction: "Sweden"
+
+sources:
+  - name: "Energimarknadsinspektionen (Ei)"
+    authority: "Energimarknadsinspektionen"
+    official_url: "https://ei.se"
+    retrieval_method: "MANUAL_CURATION"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "quarterly"
+    license:
+      type: "Public Domain (Swedish government publications)"
+      url: "https://ei.se"
+      summary: "Swedish government publications are freely available"
+    coverage:
+      scope: "Foreskrifter (EIFS), forordningar, allmanna rad for energimarknaden"
+      item_count: 0
+    languages:
+      - "sv"
+
+  - name: "Svenska kraftnat (Swedish TSO)"
+    authority: "Svenska kraftnat"
+    official_url: "https://svk.se"
+    retrieval_method: "MANUAL_CURATION"
+    format: "PDF"
+    authentication: "none"
+    update_frequency: "quarterly"
+    license:
+      type: "Public Domain (Swedish state enterprise publications)"
+      url: "https://svk.se"
+      summary: "Grid codes and technical regulations are public"
+    coverage:
+      scope: "Grid codes, balancing rules, ancillary services, grid connection requirements"
+      item_count: 0
+    languages:
+      - "sv"
+
+  - name: "Energimyndigheten (Swedish Energy Agency)"
+    authority: "Energimyndigheten"
+    official_url: "https://energimyndigheten.se"
+    retrieval_method: "MANUAL_CURATION"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "quarterly"
+    license:
+      type: "Public Domain (Swedish government publications)"
+      url: "https://energimyndigheten.se"
+      summary: "Swedish energy policy documents are public records"
+    coverage:
+      scope: "Energy policy foreskrifter, elcertifikat, energieffektivitet, fornybar energi"
+      item_count: 0
+    languages:
+      - "sv"
+
+  - name: "Elsakerhetsverket (Electrical Safety Authority)"
+    authority: "Elsakerhetsverket"
+    official_url: "https://elsakerhetsverket.se"
+    retrieval_method: "MANUAL_CURATION"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "quarterly"
+    license:
+      type: "Public Domain (Swedish government publications)"
+      url: "https://elsakerhetsverket.se"
+      summary: "Swedish safety regulations are public records"
+    coverage:
+      scope: "Electrical safety, installation requirements, elssakerhetsforeskrifter"
+      item_count: 0
+    languages:
+      - "sv"
+
+  - name: "Riksdagen (Swedish Parliament)"
+    authority: "Riksdagen"
+    official_url: "https://riksdagen.se"
+    retrieval_method: "MANUAL_CURATION"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "quarterly"
+    license:
+      type: "Public Domain (Swedish legislation)"
+      url: "https://riksdagen.se"
+      summary: "Swedish legislation is freely available"
+    coverage:
+      scope: "Ellag, natkoncessioner, energilag, propositioner"
+      item_count: 0
+    languages:
+      - "sv"

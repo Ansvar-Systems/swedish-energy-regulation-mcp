@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "eu.ansvar/swedish-energy-regulation-mcp",
+  "description": "Query Swedish energy regulation: Ei market supervision, Svenska kraftnat grid codes, Energimyndigheten policy, Elsakerhetsverket electrical safety",
+  "repository": {
+    "url": "https://github.com/Ansvar-Systems/swedish-energy-regulation-mcp",
+    "source": "github"
+  },
+  "homepage": "https://ansvar.eu",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "keywords": [
+    "energimarknadsinspektionen",
+    "svenska-kraftnat",
+    "energimyndigheten",
+    "elsakerhetsverket",
+    "swedish-energy-regulation",
+    "sweden",
+    "energy",
+    "grid-code",
+    "tariff",
+    "compliance",
+    "mcp",
+    "ansvar"
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@ansvar/swedish-energy-regulation-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

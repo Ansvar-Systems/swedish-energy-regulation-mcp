@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "mcp_name": "Swedish Energy Regulation MCP",
+  "tests": [
+    {
+      "id": "se-energy-001",
+      "category": "search",
+      "description": "Search regulations for 'energi'",
+      "tool": "se_energy_search_regulations",
+      "input": { "query": "energi" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "se-energy-002",
+      "category": "data_retrieval",
+      "description": "Get regulation by reference (EIFS 2022:1)",
+      "tool": "se_energy_get_regulation",
+      "input": { "reference": "EIFS 2022:1" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "se-energy-003",
+      "category": "search",
+      "description": "Search grid codes for 'balansansvar'",
+      "tool": "se_energy_search_grid_codes",
+      "input": { "query": "balansansvar" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "se-energy-004",
+      "category": "data_retrieval",
+      "description": "Get grid code by document ID",
+      "tool": "se_energy_get_grid_code",
+      "input": { "document_id": 2 },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "se-energy-005",
+      "category": "search",
+      "description": "Search decisions for 'intaktsram'",
+      "tool": "se_energy_search_decisions",
+      "input": { "query": "intaktsram" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "se-energy-006",
+      "category": "meta_tool",
+      "description": "About tool returns server metadata",
+      "tool": "se_energy_about",
+      "input": {},
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "se-energy-007",
+      "category": "negative_test",
+      "description": "Non-existent regulation reference handles gracefully",
+      "tool": "se_energy_get_regulation",
+      "input": { "reference": "NONEXISTENT-REF-999" },
+      "assertions": { "handles_gracefully": true }
+    },
+    {
+      "id": "se-energy-008",
+      "category": "negative_test",
+      "description": "Non-existent grid code ID handles gracefully",
+      "tool": "se_energy_get_grid_code",
+      "input": { "document_id": 99999 },
+      "assertions": { "handles_gracefully": true }
+    },
+    {
+      "id": "se-energy-009",
+      "category": "search",
+      "description": "Search regulations with regulator filter",
+      "tool": "se_energy_search_regulations",
+      "input": { "query": "elsakerhet", "regulator": "elsakerhetsverket" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "se-energy-010",
+      "category": "search",
+      "description": "Search regulations with type filter",
+      "tool": "se_energy_search_regulations",
+      "input": { "query": "foreskrift", "type": "foreskrift" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    },
+    {
+      "id": "se-energy-011",
+      "category": "search",
+      "description": "Search grid codes by code_type",
+      "tool": "se_energy_search_grid_codes",
+      "input": { "query": "natanslutning", "code_type": "grid_connection" },
+      "assertions": { "result_not_empty": true }
+    },
+    {
+      "id": "se-energy-012",
+      "category": "cross_reference",
+      "description": "Search decisions for revenue cap determinations",
+      "tool": "se_energy_search_decisions",
+      "input": { "query": "intaktsram", "decision_type": "revenue_cap" },
+      "assertions": { "result_not_empty": true, "min_results": 1 }
+    }
+  ]
+}

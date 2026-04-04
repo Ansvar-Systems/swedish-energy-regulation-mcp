@@ -1,0 +1,67 @@
+{
+  "name": "@ansvar/swedish-energy-regulation-mcp",
+  "version": "0.1.0",
+  "mcpName": "eu.ansvar/swedish-energy-regulation-mcp",
+  "description": "Swedish energy regulation MCP — Ei market supervision, Svenska kraftnat grid codes, Energimyndigheten energy policy, Elsakerhetsverket electrical safety",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": {
+    "swedish-energy-regulation-mcp": "dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "server.json"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansvar-Systems/swedish-energy-regulation-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ansvar-Systems/swedish-energy-regulation-mcp/issues"
+  },
+  "homepage": "https://github.com/Ansvar-Systems/swedish-energy-regulation-mcp#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "claude",
+    "energimarknadsinspektionen",
+    "svenska-kraftnat",
+    "energimyndigheten",
+    "elsakerhetsverket",
+    "swedish-energy-regulation",
+    "sweden",
+    "energy",
+    "compliance",
+    "grid-code",
+    "ansvar"
+  ],
+  "author": "Ansvar Systems AB <hello@ansvar.ai>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/http-server.ts",
+    "start": "node dist/src/http-server.js",
+    "seed": "npx tsx scripts/seed-sample.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "tsc --noEmit",
+    "ingest:full": "tsx scripts/ingest-all.ts --force",
+    "freshness:check": "tsx scripts/check-freshness.ts",
+    "coverage:update": "tsx scripts/update-coverage.ts",
+    "coverage:verify": "tsx scripts/verify-coverage.ts"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.13.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "better-sqlite3": "^9.4.3",
+    "zod": "^3.22.4"
+  }
+}
