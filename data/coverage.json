@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "mcp_name": "eu.ansvar/swedish-energy-regulation-mcp",
+  "mcp_type": "domain_intelligence",
+  "coverage_date": "2026-04-04",
+  "database_version": "1.0.0",
+  "sources": [],
+  "gaps": [],
+  "tools": [{"name": "se_energy_about", "category": "meta", "verified": true}, {"name": "se_energy_check_data_freshness", "category": "meta", "verified": true}, {"name": "se_energy_get_grid_code", "category": "lookup", "verified": true}, {"name": "se_energy_get_regulation", "category": "lookup", "verified": true}, {"name": "se_energy_list_sources", "category": "meta", "verified": true}, {"name": "se_energy_search_decisions", "category": "search", "verified": true}, {"name": "se_energy_search_grid_codes", "category": "search", "verified": true}, {"name": "se_energy_search_regulations", "category": "search", "verified": true}],
+  "summary": {
+    "total_tools": 8,
+    "total_sources": 4,
+    "total_items": 301,
+    "db_size_mb": 0.39,
+    "known_gaps": 0,
+    "gaps_planned": 0
+  }
+}
